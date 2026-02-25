@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chit Fund Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Chit Fund Management</h1>
+<section>
+  <h2>Select Month</h2>
+  <select id="monthSelector" onchange="loadMonthData()"></select>
+</section>
+
+<section>
+  <h2>Create Month</h2>
+  <input type="text" id="monthLabel" placeholder="Month Label">
+  <input type="number" id="bidAmount" placeholder="Bid Amount">
+  <input type="number" id="payAmount" placeholder="Pay Amount">
+  <button onclick="createMonth()">Create</button>
+  <p id="monthResult"></p>
+</section>
+
+<section>
+  <h2>Lock Month</h2>
+  <input type="number" id="lockMonthId" placeholder="Month ID">
+  <button onclick="lockMonth()">Lock</button>
+</section>
+
+<section>
+  <h2>Month Summary</h2>
+  <div id="summaryBox"></div>
+</section>
+
+<section>
+  <h2>Members Payment Status</h2>
+  <table id="membersTable" border="1" cellpadding="8">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Status</th>
+        <th>Mode</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Record Payment</h2>
+  <input type="number" id="payMonthId" placeholder="Month ID">
+  <input type="number" id="payMemberId" placeholder="Member ID">
+  <select id="paymentMode">
+    <option value="CASH">CASH</option>
+    <option value="ONLINE">ONLINE</option>
+  </select>
+  <button onclick="recordPayment()">Pay</button>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
